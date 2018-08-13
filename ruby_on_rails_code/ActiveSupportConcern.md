@@ -38,7 +38,7 @@ Post 和 Advertisement 都需要判断这个model 是不是 active 状态的，�
 
 首先把相同的逻辑放到一个 model 里面去，称为 act_as_activable。首先定义scope，然后定义 ClassMethods 和 instanceMethods。
 
-```
+```ruby
 # app/models/act_as_activable.rb or app/modeles/concerns/act_as_activable.rb
 # for models with field :is_active
 
@@ -63,7 +63,7 @@ module ActAsActivable
 end
 ```
 然后我们把这个model indclude 到需要的model 里面去。
-```
+```ruby
 class Post < ActiveRecord::Base
 
   # concerns
@@ -82,7 +82,7 @@ end
 这里我们将 act_as_activable 这个可重用的功能抽出来，然后多个model可以共用.
 
 那如果不用 concern, ActAsActivable 这个model会写成怎么样呢？
-```
+```ruby
 # app/models/act_as_activable.rb or app/modeles/concerns/act_as_activable.rb
 # for models with field :is_active
 
