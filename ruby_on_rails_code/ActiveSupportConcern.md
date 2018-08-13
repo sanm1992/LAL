@@ -3,7 +3,7 @@
 在rails项目中，如果model的代码太多，可读性和维护性则会大大下降。一个好的解决办法是把相关的逻辑代码放到对应的模块(Module)里，然后把这个模块Mixin到对应的model中，以提高代码的高内聚，低耦合。而ActiveSupport::Concern为此提供了一种规范(约定),代替原本的Mixin。
 #### ActiveSupport::Concern的运用
 举一个简单的例子，比如一个项目中有很多model都需要有有判断这个 model 是否是 active 的。我们一般会给这个model加上一个is_active字段，然后再相应的model里面会有如下的方法。
-```
+```ruby
 class Post < ActiveRecord::Base
 
   # scopes
