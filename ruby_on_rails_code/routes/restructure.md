@@ -28,6 +28,7 @@ namespace :b do
 end
 ```
 * 拆分重构
+
 1.初始化一个实例
 ```ruby
 # vim config/initializers/routing_draw.rb
