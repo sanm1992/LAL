@@ -1,6 +1,6 @@
 ## Linux下安装mysql
 * **采用默认命令行安装，不会提醒输入用户密码，之后会很坑，所以采用如下方式：**
-    - 用虚拟机浏览器https://dev.mysql.com/downloads/file/?id=477124，点击下方==No thanks, just start my download.==,手动下载安装包
+    - 用虚拟机浏览器https://dev.mysql.com/downloads/file/?id=477124 ，点击下方==No thanks, just start my download.==,手动下载安装包
     - 解析安装包
     ```
     sudo dpkg -i mysql-apt-config_0.8.6-1_all.deb
