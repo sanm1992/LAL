@@ -10,6 +10,7 @@
     ```
     sudo apt-get update
     sudo apt-get install mysql-server
+    sudo apt-get install libmysqlclient-dev
     ```
     - 在安装过程中根据提示输入密码
     - 启动和关闭musql
