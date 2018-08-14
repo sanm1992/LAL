@@ -49,9 +49,9 @@ def double(callable_object)
 end
 
 double #=> 10
-```ruby
-* Proc、Lambda的参数检查方式不同；Proc的参数检查要比Lambda参数检查要更宽松一些，如果传入Proc中的参数数量不匹配其不会发生报错，会自行进行一定的调整到期望参数的样子，但是对于lambda则不同，如果出现参数不匹配的情况，其往往会报ArgumentError异常，中断程序。
 ```
+* Proc、Lambda的参数检查方式不同；Proc的参数检查要比Lambda参数检查要更宽松一些，如果传入Proc中的参数数量不匹配其不会发生报错，会自行进行一定的调整到期望参数的样子，但是对于lambda则不同，如果出现参数不匹配的情况，其往往会报ArgumentError异常，中断程序。
+```ruby
 p = Proc.new { |a, b|  [a,b] }
 p.call(1,2,3) #=> [1, 2]
 p.call(1) #=> [1, nil]
