@@ -48,8 +48,7 @@ rvm use 1.8.7@rails23
 ```
 * 查看当前gemset list
 ```
-rvm use 1.8.7
-rvm use 1.8.7@rails23
+rvm gemset list
 ```
 * 清空gemset中的gem
 ```
