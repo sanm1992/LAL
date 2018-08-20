@@ -13,6 +13,8 @@
     sudo apt-get install mysql-server
     
     sudo apt-get install libmysqlclient-dev
+    
+    sudo apt-get install libmysqlclient-dev # 安装开发环境
     ```
     - 在安装过程中根据提示输入密码
     - 启动和关闭musql
@@ -109,3 +111,8 @@ flush privileges;
 ```
 * **10.修改密码格式验证**
 [参考大神博客](https://www.cnblogs.com/ivictor/p/5142809.html)
+
+* **11.安装开发环境**
+```
+yum install mysql-devel
+```
