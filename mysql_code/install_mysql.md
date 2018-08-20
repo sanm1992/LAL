@@ -1,6 +1,6 @@
 ## Linux下安装mysql
 * **采用默认命令行安装，不会提醒输入用户密码，之后会很坑，所以采用如下方式：**
-    - 用虚拟机浏览器https://dev.mysql.com/downloads/file/?id=477124 ，点击下方== No thanks, just start my download. ==,手动下载安装包
+    - 用虚拟机浏览器https://dev.mysql.com/downloads/file/?id=477124，点击下方==No thanks, just start my download.==,手动下载安装包
     - 解析安装包
     ```
     sudo dpkg -i mysql-apt-config_0.8.6-1_all.deb
@@ -9,7 +9,9 @@
     - 安装mysql
     ```
     sudo apt-get update
+    
     sudo apt-get install mysql-server
+    
     sudo apt-get install libmysqlclient-dev
     ```
     - 在安装过程中根据提示输入密码
@@ -64,4 +66,46 @@
     flush privileges;
     ```
     到此，连接成功;
-    
+
+## centos7下安装mysql
+* **1.下载安装包**
+```
+wget https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm
+```
+* **2.解压**
+```
+rpm -Uvh mysql57-community-release-el7-11.noarch.rpm
+```
+* **3.安装**
+```
+yum install mysql-community-server
+```
+* **4.启动**
+```
+systemctl start mysqld.service
+```
+* **5.查看启动状态**
+```
+systemctl status mysqld.service
+```
+* **6.查看初始root密码**
+```
+grep 'temporary password' /var/log/mysqld.log
+```
+* **7.修改登录密码或者新建用户**
+
+如果你不想新建用户，必须要修改密码，否则会报密码过期错误，密码验证初始规则：
+(密码8位以上，包括：大写字母、小写字母、数字、特殊字符)
+```
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'MyNewPass4!';
+```
+* **8.设置远程登录**
+```
+grant all privileges  on *.* to root@'%' identified by "MyNewPass4!";
+```
+* **9.刷新权限**
+```
+flush privileges;
+```
+* **10.修改密码格式验证**
+[参考大神博客](https://www.cnblogs.com/ivictor/p/5142809.html)
