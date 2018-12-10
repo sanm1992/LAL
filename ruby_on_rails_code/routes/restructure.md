@@ -43,7 +43,7 @@ end
 2.在routes文件里使用
 ```ruby
 Rails.application.routes.draw do
-  draw :admin
+  draw :user
 end
 ```
 3.创建拆分之后对应的文件(为了方便管理，我们可以以功能分块来拆分路由，放到对应的文件)
