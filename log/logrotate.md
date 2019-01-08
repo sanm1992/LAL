@@ -7,7 +7,8 @@
 ```
 - 在文件中填入一下内容
 ```bash
-/var/projects/sanmblog/log/production.log { # 项目日志文件路径
+/var/projects/sanmblog/log/production.log { # 
+        su root root # 分割日志所用权限组
         weekly # 按周，也可以 daily 按日，monthly 按月
         missingok # 如果文件不存在，忽略错误信息
         rotate 8 # 保留8个拆分文件，超过时会删除最久远的文件
@@ -29,4 +30,8 @@
 - 执行以下命令，会看到拆分后的日志文件
 ```bash
 /usr/sbin/logrotate -f /etc/logrotate.conf
+```
+- 之心一下命令手动添加轮询任务
+```bash
+59 23 * * * /usr/sbin/logrotate -f /etc/logrotate.d/myproject
 ```
