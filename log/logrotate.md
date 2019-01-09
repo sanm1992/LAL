@@ -31,7 +31,7 @@
 ```bash
 /usr/sbin/logrotate -f /etc/logrotate.conf
 ```
-- 之心一下命令手动添加轮询任务
+- 执行以下命令手动添加轮询任务
 ```bash
 59 23 * * * /usr/sbin/logrotate -f /etc/logrotate.d/myproject
 ```
