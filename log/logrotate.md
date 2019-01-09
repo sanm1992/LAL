@@ -33,5 +33,7 @@
 ```
 - 执行以下命令手动添加轮询任务
 ```bash
+执行crontab -e 在文件内添加以下代码
+
 59 23 * * * /usr/sbin/logrotate -f /etc/logrotate.d/myproject
 ```
