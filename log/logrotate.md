@@ -17,6 +17,7 @@
         delaycompress #延迟压缩，也就是本次拆分的文件在下次执行时再压缩
         notifempty # 忽略空白文件
         olddir /var/projects/sanmblog/log/production # 日志转存到其他文件
+        copytruncate # 先拷贝原来的文件然后在清空
         lastaction # 所有命令执行完执行以下命令
                 /etc/init.d/nginx reload > /dev/null
         endscript
